@@ -1,3 +1,8 @@
+
+--add shcema also here, WITH if exists
+CREATE SCHEMA ''
+
+
 IF NOT EXISTS(SELECT 1 from sys.Objects
 Where object_id = OBJECT_ID('Vegetables'))
 BEGIN
@@ -14,9 +19,12 @@ CREATE TABLE Vegetables(
 );
 END
 
-
-INSERT INTO Vegetables (Name, MfgDate, ExpiredDate, IsActive, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)
-VALUES ('Carrot', '2025-02-01', '2025-03-01', 1, GETDATE(), 1, NULL, NULL);
+IF NOT EXISTS(SELECT 1 FROM Vegetables WHERE Name='Carrot')
+BEGIN
+	INSERT INTO Vegetables (Name, MfgDate, ExpiredDate, IsActive, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)
+	SELECT 'Carrot', '2025-02-01', '2025-03-01', 1, GETDATE(), 1, NULL, NULL
+END
+GO -- USE go after each statements, go represents session or scope
 
 INSERT INTO Vegetables (Name, MfgDate, ExpiredDate, IsActive, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)
 VALUES ('Tomato', '2025-01-15', '2025-02-15', 1, GETDATE(), 2, NULL, NULL);

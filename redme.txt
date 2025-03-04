@@ -1,0 +1,16 @@
+date: 5/3/2025
+standards
+1.all the files should be saved with .sql extension
+2. ddl ,dml, dtl...etc are should be in different folders
+3. file name shoud represent the scipt logic
+	1_createShop.sql
+	2_alterVegetables.sql
+	3_InsertVegData.sql
+	
+	here 1,2,3 represents order of the execution
+4. Any statements should be in such way that it can be executed N number of times without any error or duplicate
+
+5. create datbase scripts
+	create schema
+	create tables
+	
