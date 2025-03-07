@@ -1,0 +1,15 @@
+IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID('Vegetables'))
+BEGIN
+    CREATE TABLE Vegetables (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        Name VARCHAR(50) NOT NULL,
+        MfgDate DATE,
+        ExpiredDate DATE,
+        IsActive BIT NOT NULL,
+        CreatedDate DATETIME NOT NULL,
+        CreatedBy INT NOT NULL,
+        ModifiedDate DATETIME NULL,
+        ModifiedBy INT NULL
+    );
+END;
+GO
