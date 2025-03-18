@@ -1,0 +1,4 @@
+INSERT INTO Users (UserName, Email, FirstName, LastName, IsActive, Password, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)  
+VALUES 
+    ('sri_thanvi', 'sri.thanvi@example.com', 'Sri', 'Thanvi', 1, 'password123', GETDATE(), 1, NULL, NULL),
+    ('sravya', 'sravya@example.com', 'Sravya', NULL, 1, 'password123', GETDATE(), 1, NULL, NULL);
